@@ -19,26 +19,7 @@ class MyApp extends StatelessWidget {
 ///  It arrange the children widgets vertically
 
 /// Properties: MainAxisAlignment  - CrossAxisAlignment -  MainAxisSize
-/// Note:
-/// if we didn't specify the container size, it will take the sizes of widgets contained.
-///
-///
-/// To control the alignement of text(s) on the main axis:
-///  * mainAxisAlignment: MainAxisAlignment.start,
-///    Place the children as close to the start of the main axis as possible.
-///  * mainAxisAlignment: MainAxisAlignment.center,
-///    Place the children as close to the middle of the main axis as possible.
-///  * mainAxisAlignment: MainAxisAlignment.end,
-///    Place the children as close to the end of the main axis as possible.
-///  * mainAxisAlignment: MainAxisAlignment.spaceAround,
-///    Place the free space evenly between the children as well as half of
-///    that space before and after the first and last child.
-///  * mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-///    Place the free space evenly between the children
-///    as well as before and after the first and last child.
-///  * mainAxisAlignment: MainAxisAlignment.spaceBetween,
-///    Place the free space evenly between the children.
-///
+
 /// To control the alignement of text(s) on the cross axis:
 ///  * crossAxisAlignment: CrossAxisAlignment.start,
 ///    Place the children with their start edge aligned
@@ -64,6 +45,9 @@ class ColumnWidget extends StatelessWidget {
         appBar: AppBar(),
         drawer: const Drawer(),
         body: Container(
+
+            /// Note:
+            /// if we didn't specify the container size, it will take the sizes of widgets contained.
             width: 350,
             color: Colors.black,
             child: const Column(
@@ -75,6 +59,22 @@ class ColumnWidget extends StatelessWidget {
                 ///  * and: mainAxisSize: MainAxisSize.max, (The default state)
                 ///    Maximize the amount of free space along the main axis
                 mainAxisSize: MainAxisSize.min,
+
+                /// To control the alignement of text(s) on the main axis:
+                ///  * mainAxisAlignment: MainAxisAlignment.start,
+                ///    Place the children as close to the start of the main axis as possible.
+                ///  * mainAxisAlignment: MainAxisAlignment.center,
+                ///    Place the children as close to the middle of the main axis as possible.
+                ///  * mainAxisAlignment: MainAxisAlignment.end,
+                ///    Place the children as close to the end of the main axis as possible.
+                ///  * mainAxisAlignment: MainAxisAlignment.spaceAround,
+                ///    Place the free space evenly between the children as well as half of
+                ///    that space before and after the first and last child.
+                ///  * mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                ///    Place the free space evenly between the children
+                ///    as well as before and after the first and last child.
+                ///  * mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                ///    Place the free space evenly between the children.
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 //textBaseline: TextBaseline.alphabetic,
                 crossAxisAlignment: CrossAxisAlignment.start,
