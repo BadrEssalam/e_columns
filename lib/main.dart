@@ -20,21 +20,6 @@ class MyApp extends StatelessWidget {
 
 /// Properties: MainAxisAlignment  - CrossAxisAlignment -  MainAxisSize
 
-/// To control the alignement of text(s) on the cross axis:
-///  * crossAxisAlignment: CrossAxisAlignment.start,
-///    Place the children with their start edge aligned
-///    with the start side of the cross axis.
-///  * crossAxisAlignment: CrossAxisAlignment.end,
-///    Place the children as close to the end of
-///    the cross axis as possible.
-///  * crossAxisAlignment: CrossAxisAlignment.center,
-///    Place the children so that their centers align
-///    with the middle of the cross axis.
-///    Note: This is the default cross-axis alignment.
-///  * crossAxisAlignment: CrossAxisAlignment.stretch,
-///    Require the children to fill the cross axis.
-///    This causes the constraints passed to the children
-///    to be tight in the cross axis.
 class ColumnWidget extends StatelessWidget {
   const ColumnWidget({super.key});
 
@@ -47,11 +32,13 @@ class ColumnWidget extends StatelessWidget {
         body: Container(
 
             /// Note:
-            /// if we didn't specify the container size, it will take the sizes of widgets contained.
+            /// if we didn't specify any size factors of the container (height and width),
+            /// it will take the total size of the widgets contained.
             width: 350,
-            color: Colors.black,
-            child: const Column(
-                // If we made the column contained inside the container:
+            constraints: const BoxConstraints.expand(),
+            child: Column(
+
+                /// If we made the column contained inside the container:
                 /// the column will cover all the vertical space of the widgets inside of it, so:
                 /// how can we control this property?
                 ///  * by: mainAxisSize: MainAxisSize.min,
@@ -75,21 +62,73 @@ class ColumnWidget extends StatelessWidget {
                 ///    as well as before and after the first and last child.
                 ///  * mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 ///    Place the free space evenly between the children.
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                //textBaseline: TextBaseline.alphabetic,
-                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
+                /// To control the alignement of text(s) on the cross axis:
+                ///  * crossAxisAlignment: CrossAxisAlignment.start,
+                ///    Place the children with their start edge aligned
+                ///    with the start side of the cross axis.
+                ///  * crossAxisAlignment: CrossAxisAlignment.end,
+                ///    Place the children as close to the end of
+                ///    the cross axis as possible.
+                ///  * crossAxisAlignment: CrossAxisAlignment.center,
+                ///    Place the children so that their centers align
+                ///    with the middle of the cross axis.
+                ///    Note: This is the default cross-axis alignment.
+                ///  * crossAxisAlignment: CrossAxisAlignment.stretch,
+                ///    Require the children to fill the cross axis.
+                ///    This causes the constraints passed to the children
+                ///    to be tight in the cross axis.
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text(
-                    "I hope to be a good programmer.",
-                    style: TextStyle(color: Colors.redAccent, fontSize: 20),
+                  ///
+                  ///
+                  Container(
+                    height: 200,
+                    padding: const EdgeInsets.all(5),
+                    constraints:
+                        BoxConstraints.tight(const Size.fromRadius(100)),
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                        color: Colors.blue[400], shape: BoxShape.circle),
+                    child: const Text(
+                      "I hope to be a good programmer.",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(color: Colors.white, fontSize: 20),
+                    ),
                   ),
-                  Text(
-                    "But you can not be",
-                    style: TextStyle(color: Colors.redAccent, fontSize: 20),
+                  ///
+                  ///
+                  Container(
+                    height: 200,
+                    padding: const EdgeInsets.all(5),
+                    constraints:
+                        BoxConstraints.tight(const Size.fromRadius(100)),
+                    alignment: Alignment.center,
+                    decoration: const BoxDecoration(
+                        color: Color.fromARGB(255, 203, 107, 28),
+                        shape: BoxShape.circle),
+                    child: const Text(
+                      "But you can not be",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(color: Colors.white, fontSize: 20),
+                    ),
                   ),
-                  Text(
-                    "if you are not ready to work hard",
-                    style: TextStyle(color: Colors.redAccent, fontSize: 20),
+                  ///
+                  ///
+                  Container(
+                    height: 200,
+                    padding: const EdgeInsets.all(5),
+                    constraints:
+                        BoxConstraints.tight(const Size.fromRadius(100)),
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                        color: Colors.blue[400], shape: BoxShape.circle),
+                    child: const Text(
+                      "if you 're not ready to work hard",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(color: Colors.white, fontSize: 20),
+                    ),
                   )
                 ])),
       ),
