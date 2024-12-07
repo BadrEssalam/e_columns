@@ -1,6 +1,6 @@
 # e_columns
 
-A new Flutter project.
+Key features of the Column widget
 
 ## Getting Started
 
